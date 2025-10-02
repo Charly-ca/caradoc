@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --font-libre: "Libre Franklin", sans-serif;
+  --font-meta: "Metamorphous", serif;
+  --color-caradoc-red: #E31A3A;
+}

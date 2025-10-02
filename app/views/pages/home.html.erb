@@ -1,0 +1,23 @@
+<section class="relative h-screen overflow-hidden">
+  <!-- Image de fond -->
+  <%= image_tag "croque-monsieur.jpg", class: "absolute inset-0 w-full h-full object-cover", alt: "Croque-monsieur" %>
+
+  <!-- Fond sombre, appeler overlay -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Contenu du hero -->
+  <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-5">
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+      Le Caradoc
+    </h1>
+
+    <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl">
+     Les Meilleurs Croque-Monsieur, Bistro-bar convivial où tradition et qualité se rencontrent
+    </p>
+
+    <div class="flex gap-4">
+      <%= link_to "Voir le Menu", menu_path, class: "bg-amber-500 hover:bg-caradoc-red text-white font-bold px-8 py-4 rounded-lg transition-colors text-lg" %>
+      <%= link_to "Nous Contacter", "#contact", class: "bg-white hover:bg-gray-100 text-amber-900 font-bold px-8 py-4 rounded-lg transition-colors text-lg" %>
+    </div>
+  </div>
+</section>
