@@ -21,3 +21,50 @@
     </div>
   </div>
 </section>
+
+<section class='py-20'>
+  <div class='container mx-auto px-5'>
+    <div class='flex flex-col md:flex-row gap-12 items-center'>
+
+      <div class='flex-1'>
+        <div class='splide'>
+          <section id='carrousel-plats' class="splide bg-white p-4 rounded-2xl shadow-xg border-amber-100 hover:shadow-2xl transition-shadow duration-300 p-6  " aria-labelledby="carousel-heading">
+            <div class="splide__track rounded-lg overflow-hidden">
+              <ul class="splide__list">
+              <li class="splide__slide"><%= image_tag "croque-monsieur.jpg",  class: "w-full h-96 object-cover rounded-lg" %></li>
+              <li class="splide__slide"><%= image_tag "taverne.jpg",  class: "w-full h-96 object-cover rounded-lg" %></li>
+              <li class="splide__slide"><%= image_tag "bar.jpg",  class: "w-full h-96 object-cover rounded-lg" %></li>
+              </ul>
+            </div>
+        </section>
+        </div>
+      </div>
+
+      <div class='flex-1'>
+        <h2 class='text-3xl font-bold mb-6 text-amber-900'>Bienvenue au Caradoc</h2>
+        <p class='text-lg mb-4 text-gray-700'>Découvrez notre sélection de croque-monsieur gourmets, préparés avec des ingrédients frais et de qualité. Que vous soyez amateur de classiques ou à la recherche de saveurs innovantes, notre menu varié saura satisfaire toutes vos envies.</p>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+
+ <script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+      var splide = new Splide( '#carrousel-plats', {
+        arrows: false,
+        type   : 'loop',
+        autoplay: true,
+        interval: 4000,
+        speed: 1000,
+        width: '100%',
+        pagination: true,
+      } );
+      splide.mount();
+    } );
+
+
+ </script>
