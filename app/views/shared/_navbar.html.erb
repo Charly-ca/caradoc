@@ -1,18 +1,19 @@
-<nav class="bg-amber-50 border-b border-amber-200 px-4 py-4">
-  <div class="container mx-auto flex items-center justify-between">
-    <!-- Logo ou nom du bistro à gauche -->
-        <div class="flex items-center gap-3">
-      <%= link_to root_path, class: "flex items-center gap-6" do %>
-        <%= image_tag "logo-caradoc.png", alt: "Logo Caradoc", class: "h-12 w-12" %>
-        <span class="text-2xl text-amber-900"> Le Caradoc</span>
-      <% end %>
-    </div>
+<div data-controller="navbar" data-action="scroll@window->navbar#scroll">
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" data-navbar-target="nav">
+    <div class="container mx-auto px-5 py-4 flex items-center justify-between">
+      <!-- Logo à gauche -->
+      <div>
+        <%= link_to root_path do %>
+          <%= image_tag "logo-caradoc.png", alt: "Caradoc", class: "h-12 w-12" %>
+        <% end %>
+      </div>
 
-
-    <!-- Liens de navigation à droite -->
-    <div class="flex gap-8">
-      <%= link_to "Accueil", root_path, class: "text-amber-900 hover:text-amber-600 transition-colors" %>
-      <%= link_to "Menu", menu_path, class: "text-amber-900 hover:text-amber-600 transition-colors" %>
+      <!-- Liens de navigation à droite -->
+      <div class="flex gap-8">
+        <%= link_to "Accueil", root_path, class: "font-bold transition-colors", data: { navbar_target: "link" } %>
+        <%= link_to "Menu", menu_path, class: "font-bold transition-colors", data: { navbar_target: "link" } %>
+        
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>

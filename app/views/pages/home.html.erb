@@ -7,64 +7,191 @@
 
   <!-- Contenu du hero -->
   <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-5">
-    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
-      Le Caradoc
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-10">
+      LE CARADOC
     </h1>
 
-    <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl">
+    <p class="text-xl md:text-2xl text-white mb-20 max-w-2xl font-libre">
      Les Meilleurs Croque-Monsieur, Bistro-bar convivial où tradition et qualité se rencontrent
     </p>
 
     <div class="flex gap-4">
-      <%= link_to "Voir le Menu", menu_path, class: "bg-amber-500 hover:bg-caradoc-red text-white font-bold px-8 py-4 rounded-lg transition-colors text-lg" %>
-      <%= link_to "Nous Contacter", "#contact", class: "bg-white hover:bg-gray-100 text-amber-900 font-bold px-8 py-4 rounded-lg transition-colors text-lg" %>
+      <%= link_to "Voir Le Menu", menu_path, class: "bg-white/20 backdrop-blur-sm border-3 border-white hover:bg-white hover:text-amber-900 text-white font-bold px-8 py-4 rounded-lg transition-all text-lg" %>
     </div>
   </div>
 </section>
 
-<section class='py-20'>
+
+
+
+<section class='relative py-20'>
+
+
+  <!-- Séparateur décoratif entre sections -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
+    </div>
+  </div>
+
   <div class='container mx-auto px-5'>
     <div class='flex flex-col md:flex-row gap-12 items-center'>
 
       <div class='flex-1'>
-        <div class='splide'>
-          <section id='carrousel-plats' class="splide bg-white p-4 rounded-2xl shadow-xg border-amber-100 hover:shadow-2xl transition-shadow duration-300 p-6  " aria-labelledby="carousel-heading">
-            <div class="splide__track rounded-lg overflow-hidden">
-              <ul class="splide__list">
-              <li class="splide__slide"><%= image_tag "croque-monsieur.jpg",  class: "w-full h-96 object-cover rounded-lg" %></li>
-              <li class="splide__slide"><%= image_tag "taverne.jpg",  class: "w-full h-96 object-cover rounded-lg" %></li>
-              <li class="splide__slide"><%= image_tag "bar.jpg",  class: "w-full h-96 object-cover rounded-lg" %></li>
-              </ul>
-            </div>
-        </section>
+        <div class="splide" data-controller="carousel" data-carousel-type="slide">
+          <div class="splide__track rounded-xl overflow-hidden">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <%= image_tag "croque-monsieur.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "taverne.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "bar.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class='flex-1'>
         <h2 class='text-3xl font-bold mb-6 text-amber-900'>Bienvenue au Caradoc</h2>
-        <p class='text-lg mb-4 text-gray-700'>Découvrez notre sélection de croque-monsieur gourmets, préparés avec des ingrédients frais et de qualité. Que vous soyez amateur de classiques ou à la recherche de saveurs innovantes, notre menu varié saura satisfaire toutes vos envies.</p>
+        <p class='text-lg mb-4 text-gray-700 font-libre'>Découvrez notre sélection de croque-monsieur gourmets, préparés avec des ingrédients frais et de qualité. Que vous soyez amateur de classiques ou à la recherche de saveurs innovantes, notre menu varié saura satisfaire toutes vos envies.</p>
+        <%= link_to menu_path, class: "inline-flex items-center gap-2 px-6 py-3 bg-amber-900 hover:bg-caradoc-red text-white font-bold rounded-lg transition-colors group" do %>
+          Voir Le Menu
+          <i data-lucide="arrow-right" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"></i>
+        <% end %>
       </div>
 
+    </div>
+  </div>
 
+  <!-- Séparateur décoratif entre sections -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class='relative bg-white py-20'>
+
+
+
+  <div class='container mx-auto px-5'>
+    <div class='flex flex-col md:flex-row-reverse gap-12 items-center'>
+      <div class='flex-1'>
+        <div class="splide" data-controller="carousel" data-carousel-type="fade">
+          <!-- structure du carrousel histoire -->
+
+          <div class="splide__track rounded-xl overflow-hidden">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <%= image_tag "croque-monsieur.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "taverne.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "bar.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class='flex-1'>
+        <!-- ton texte sur l'histoire -->
+        <h2 class='text-3xl font-bold mb-6 text-amber-900'>L'Histoire du Caradoc</h2>
+        <p class='text-lg mb-4 text-gray-700 font-libre'>
+          Installé au cœur des Halles de Saint-Nazaire, Le Caradoc est né de la passion de Fabien et Béatrice pour la convivialité et la bonne cuisine. Fans de Kaamelott, ils ont imaginé un bistro-bar à l'esprit chaleureux où les croques-monsieur sont rois et l'humour toujours bienvenu.
+        </p>
+     </div>
 
     </div>
   </div>
 </section>
 
 
- <script>
-    document.addEventListener( 'DOMContentLoaded', function() {
-      var splide = new Splide( '#carrousel-plats', {
-        arrows: false,
-        type   : 'loop',
-        autoplay: true,
-        interval: 4000,
-        speed: 1000,
-        width: '100%',
-        pagination: true,
-      } );
-      splide.mount();
-    } );
 
 
- </script>
+
+<section class='py-20'>
+
+
+<!-- Séparateur décoratif entre sections -->
+<div class="py-8">
+  <div class="container mx-auto px-5">
+    <div class="flex items-center gap-4">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+      <div class="text-amber-500 text-2xl">⚜</div>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class='container mx-auto px-5'>
+
+     <div class='text-center mb-12'>
+      <h2 class='text-4xl font-bold mb-6 text-amber-900'>Découvrez Notre Univers</h2>
+      <p class='text-lg text-gray-700 font-libre max-w-3xl mx-auto'>
+        Aux Halles de Saint-Nazaire, Le Caradoc vous accueille dans une ambiance chaleureuse où tradition bistrotière et convivialité se rencontrent. Un lieu de vie où l'on se sent comme à la maison.
+      </p>
+    </div>
+
+    <div class='grid grid-cols-2 md:grid-cols-6 gap-4 auto-rows-[200px]'>
+
+  <!-- Photo principale du bar : pleine largeur sur mobile, 4 colonnes sur desktop -->
+  <div class='col-span-2 md:col-span-4 row-span-2'>
+    <%= image_tag "bar.jpg", alt: "Le Caradoc", class: "w-full h-full object-cover rounded-lg shadow-md" %>
+  </div>
+
+  <!-- Photo du pain : pleine largeur sur mobile, 2 colonnes sur desktop -->
+  <div class='col-span-2 md:col-span-2 row-span-2'>
+    <%= image_tag "bread.jpg", alt: "Notre pain artisanal", class: "w-full h-full object-cover rounded-lg shadow-md" %>
+  </div>
+
+  <!-- Trois photos moyennes : pleine largeur sur mobile, 2 colonnes chacune sur desktop -->
+  <div class='col-span-2 md:col-span-2'>
+    <%= image_tag "taverne.jpg", alt: "Notre taverne", class: "w-full h-full object-cover rounded-lg shadow-md" %>
+  </div>
+
+  <div class='col-span-2 md:col-span-2'>
+    <%= image_tag "verre.jpg", alt: "Notre sélection de boissons", class: "w-full h-full object-cover rounded-lg shadow-md" %>
+  </div>
+
+  <div class='col-span-2 md:col-span-2'>
+    <%= image_tag "croque-monsieur.jpg", alt: "Nos croques signatures", class: "w-full h-full object-cover rounded-lg shadow-md" %>
+  </div>
+
+</div>
+
+  </div>
+
+<!-- Séparateur décoratif entre sections -->
+<div class="py-8">
+  <div class="container mx-auto px-5">
+    <div class="flex items-center gap-4">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+      <div class="text-amber-500 text-2xl">⚜</div>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+    </div>
+  </div>
+</div>
+
+
+
+</section>
