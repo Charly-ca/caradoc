@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
 
-  <body class="font-meta bg-amber-50">
+  <body class="font-meta bg-amber-50 <%= 'homepage' if controller_name == 'pages' && action_name == 'home' %>">
     <%= render "shared/navbar" %>
     <main>
 
@@ -28,5 +28,6 @@
     <script>
       lucide.createIcons();
     </script>
+    <%= render "shared/footer" %>
   </body>
 </html>
