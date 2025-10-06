@@ -1,6 +1,6 @@
 <section class="relative h-screen overflow-hidden">
   <!-- Image de fond -->
-  <%= image_tag "plats.jpg", class: "absolute inset-0 w-full h-full object-cover", alt: "Croque-monsieur" %>
+  <%= image_tag "plats.webp", class: "absolute inset-0 w-full h-full object-cover", alt: "Croque-monsieur" %>
 
   <!-- Fond sombre, appeler overlay -->
   <div class="absolute inset-0 bg-black/40"></div>
@@ -48,22 +48,19 @@
           <div class="splide__track rounded-xl overflow-hidden">
             <ul class="splide__list">
               <li class="splide__slide">
-                <%= image_tag "croque3.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "croque3.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
               <li class="splide__slide">
-                <%= image_tag "oeuf.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "oeuf.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
               <li class="splide__slide">
-                <%= image_tag "croque4.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "croque4.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
               <li class="splide__slide">
-                <%= image_tag "plats.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "plats.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
               <li class="splide__slide">
-                <%= image_tag "dessert.jpg", class: "w-full h-96 object-cover rounded-lg" %>
-              </li>
-              <li class="splide__slide">
-                <%= image_tag "bread.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "dessert.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
             </ul>
           </div>
@@ -109,13 +106,13 @@
           <div class="splide__track rounded-xl overflow-hidden">
             <ul class="splide__list">
               <li class="splide__slide">
-                <%= image_tag "bea-fab-bar.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "bea-fab-bar.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
               <li class="splide__slide">
-                <%= image_tag "client-bar.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "client-bar.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
               <li class="splide__slide">
-                <%= image_tag "cuisinier.jpg", class: "w-full h-96 object-cover rounded-lg" %>
+                <%= image_tag "cuisinier.webp", class: "w-full h-96 object-cover rounded-lg" %>
               </li>
             </ul>
           </div>
@@ -138,71 +135,125 @@
 
 
 
+
+
 <section class='py-20'>
 
-
-<!-- Séparateur décoratif entre sections -->
-<div class="py-8">
-  <div class="container mx-auto px-5">
-    <div class="flex items-center gap-4">
-      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
-      <div class="text-amber-500 text-2xl">⚜</div>
-      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+  <!-- Séparateur décoratif -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
     </div>
   </div>
-</div>
-
-
 
   <div class='container mx-auto px-5'>
 
-     <div class='text-center mb-12'>
+    <!-- Texte -->
+    <div class='text-center mb-12'>
       <h2 class='text-4xl font-bold mb-6 text-amber-900'>Découvrez Notre Univers</h2>
       <p class='text-lg text-gray-700 font-libre max-w-3xl mx-auto'>
-        Situé enface des Aux Halles de Saint-Nazaire, Le Caradoc vous accueille dans une ambiance chaleureuse où tradition et convivialité se rencontrent. Un lieu de vie où l'on se sent comme à la maison.
+        Situé en face des Halles de Saint-Nazaire, Le Caradoc vous accueille dans une ambiance chaleureuse où tradition et convivialité se rencontrent. Un lieu de vie où l'on se sent comme à la maison.
       </p>
     </div>
 
-    <div class='grid grid-cols-2 md:grid-cols-6 gap-4 auto-rows-[200px]'>
+    <!-- ⚠️ CRITIQUE : data-controller ici, avant la grille -->
+    <div data-controller="gallery">
 
-  <!-- Photo principale du bar : pleine largeur sur mobile, 4 colonnes sur desktop -->
-  <div class='col-span-2 md:col-span-4 row-span-2'>
-    <%= image_tag "caradoc-exterieur-centrer.jpg", alt: "Le Caradoc", class: "w-full h-full object-cover rounded-lg shadow-md" %>
+      <!-- Grille de photos -->
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-4'>
+
+        <% gallery_images = [
+          { src: "caradoc-exterieur-centrer.webp", alt: "Extérieur du Caradoc" },
+          { src: "biere.webp", alt: "Notre sélection de bières" },
+          { src: "champagne.webp", alt: "Champagne et bulles" },
+          { src: "tableau-femme.webp", alt: "Décoration intérieure" },
+          { src: "interieur-tableau.webp", alt: "Ambiance du bar" },
+          { src: "client-bar.webp", alt: "Nos clients au bar" },
+          { src: "croque-inte.webp", alt: "Nos croques signatures" },
+          { src: "bea-dos.webp", alt: "Service au comptoir" },
+          { src: "caradoc-menu.webp", alt: "Notre carte" }
+        ] %>
+
+        <% gallery_images.each_with_index do |img, index| %>
+          <div class='relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer group hover:shadow-xl transition-shadow'
+               data-action="click->gallery#open"
+               data-gallery-index-param="<%= index %>">
+
+            <%= image_tag img[:src],
+                          alt: img[:alt],
+                          class: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" %>
+
+            <!-- Overlay au hover -->
+            <div class='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center'>
+              <i data-lucide="expand" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+
+     <!-- Modal pour le carrousel -->
+<div data-gallery-target="modal"
+     class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
+     data-action="click->gallery#closeOnBackdrop">
+
+  <div class="relative w-full h-full flex items-center justify-center">
+
+    <!-- Bouton fermer -->
+    <button data-action="click->gallery#close"
+            class="absolute top-4 right-4 text-white hover:text-amber-300 transition-colors z-10">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+
+    <!-- Compteur -->
+    <div class="absolute top-4 left-4 text-white text-lg font-semibold z-10">
+      <span data-gallery-target="counter"></span>
+    </div>
+
+    <!-- Container pour centrer l'image avec max-width -->
+    <div class="relative flex items-center justify-center w-full h-full max-w-7xl mx-auto px-20">
+
+      <!-- Flèche GAUCHE - en dehors de l'image -->
+      <button data-action="click->gallery#previous"
+              class="absolute left-4 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-4 rounded-full transition-all z-10 flex-shrink-0">
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Image principale - s'adapte à sa taille naturelle -->
+      <div class="flex items-center justify-center max-w-full max-h-full">
+        <img data-gallery-target="image"
+             src=""
+             alt=""
+             class="max-w-full max-h-[85vh] w-auto h-auto object-contain rounded-lg shadow-2xl">
+      </div>
+
+      <!-- Flèche DROITE - en dehors de l'image -->
+      <button data-action="click->gallery#next"
+              class="absolute right-4 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-4 rounded-full transition-all z-10 flex-shrink-0">
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
   </div>
 
-  <!-- Photo du pain : pleine largeur sur mobile, 2 colonnes sur desktop -->
-  <div class='col-span-2 md:col-span-2 row-span-2'>
-    <%= image_tag "biere.jpg", alt: "Notre pain artisanal", class: "w-full h-full object-cover rounded-lg shadow-md" %>
-  </div>
-
-  <!-- Trois photos moyennes : pleine largeur sur mobile, 2 colonnes chacune sur desktop -->
-  <div class='col-span-2 md:col-span-2'>
-    <%= image_tag "champagne.jpg", alt: "Notre taverne", class: "w-full h-full object-cover rounded-lg shadow-md" %>
-  </div>
-
-  <div class='col-span-2 md:col-span-2'>
-    <%= image_tag "tableau-femme.jpg", alt: "Notre sélection de boissons", class: "w-full h-full object-cover rounded-lg shadow-md" %>
-  </div>
-
-  <div class='col-span-2 md:col-span-2'>
-    <%= image_tag "interieur-tableau.jpg", alt: "Nos croques signatures", class: "w-full h-full object-cover rounded-lg shadow-md" %>
-  </div>
-
-</div>
+</div> <!-- Fin data-controller="gallery" -->
 
   </div>
 
-<!-- Séparateur décoratif entre sections -->
-<div class="py-8">
-  <div class="container mx-auto px-5">
-    <div class="flex items-center gap-4">
-      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
-      <div class="text-amber-500 text-2xl">⚜</div>
-      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+  <!-- Séparateur décoratif -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
     </div>
   </div>
-</div>
-
-
 
 </section>
