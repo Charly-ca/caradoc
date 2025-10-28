@@ -20,7 +20,7 @@
 
   <body class="font-meta bg-amber-50 <%= 'homepage' if controller_name == 'pages' && action_name == 'home' %>">
     <%= render "shared/navbar" %>
-    <main>
+    <main style="<%= 'padding-top: 120px;' unless action_name == 'home' %>">
 
       <%= yield %>
     </main>

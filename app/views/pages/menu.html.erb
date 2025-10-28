@@ -1,14 +1,34 @@
-<div class="min-h-screen bg-amber-50">
+<div class="min-h-screen bg-amber-50" data-controller="menu-tabs">
 
-  <!-- Hero simple -->
-  <section class="relative h-64 bg-amber-900">
-    <div class="absolute inset-0 flex items-center justify-center">
-      <h1 class="text-5xl md:text-6xl font-bold text-white">Notre Carte</h1>
+  <!-- Navigation par Onglets -->
+  <section class="bg-amber-50 border-b-2 border-amber-200 py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex justify-center gap-4">
+
+        <!-- Onglet Nos Plats -->
+        <button
+          data-menu-tabs-target="tab"
+          data-action="click->menu-tabs#switchTab"
+          data-tab-id="plats"
+          class="px-8 py-3 bg-amber-900 text-white font-bold rounded-lg transition-colors border-2 border-amber-900 hover:bg-amber-800">
+          Nos Plats
+        </button>
+
+        <!-- Onglet Nos Boissons -->
+        <button
+          data-menu-tabs-target="tab"
+          data-action="click->menu-tabs#switchTab"
+          data-tab-id="boissons"
+          class="px-8 py-3 bg-white text-amber-900 font-bold rounded-lg transition-colors border-2 border-amber-900 hover:bg-amber-50">
+          Nos Boissons
+        </button>
+
+      </div>
     </div>
   </section>
 
-  <!-- Menu Content -->
-  <div class="container mx-auto px-5 py-20 max-w-3xl">
+  <!-- Contenu : NOS PLATS -->
+  <div data-menu-tabs-target="content" data-content-id="plats" class="container mx-auto px-5 py-20 max-w-3xl">
 
     <!-- Les Croques Salés -->
     <section class="mb-20">
@@ -24,7 +44,7 @@
             <h3 class="text-xl font-bold text-amber-900">Croque-monsieur</h3>
             <span class="text-xl font-bold text-amber-900 whitespace-nowrap">7,00 €</span>
           </div>
-          <p class="text-gray-600 italic">
+          <p class="text-gray-600 italic font-libre">
             pain de mie, béchamel, jambon, gruyère
           </p>
         </div>
@@ -35,7 +55,7 @@
             <h3 class="text-xl font-bold text-amber-900">Croquorico</h3>
             <span class="text-xl font-bold text-amber-900 whitespace-nowrap">9,00 €</span>
           </div>
-          <p class="text-gray-600 italic">
+          <p class="text-gray-600 italic font-libre">
             pain de campagne, béarnaise, poulet grillé, champignon, gruyère, herbes de Provence
           </p>
         </div>
@@ -46,7 +66,7 @@
             <h3 class="text-xl font-bold text-amber-900">Croque Yvain</h3>
             <span class="text-xl font-bold text-amber-900 whitespace-nowrap">10,00 €</span>
           </div>
-          <p class="text-gray-600 italic">
+          <p class="text-gray-600 italic font-libre">
             pain de campagne, béchamel, jambon de pays, champignon, roquefort
           </p>
         </div>
@@ -57,7 +77,7 @@
             <h3 class="text-xl font-bold text-amber-900">Croque Arthur</h3>
             <span class="text-xl font-bold text-amber-900 whitespace-nowrap">8,50 €</span>
           </div>
-          <p class="text-gray-600 italic">
+          <p class="text-gray-600 italic font-libre">
             pain de mie, crème fraîche, wasabi, aneth, truite fumée, pousses d'épinard, cheddar
           </p>
         </div>
@@ -68,7 +88,7 @@
             <h3 class="text-xl font-bold text-amber-900">Croque Gauvin</h3>
             <span class="text-xl font-bold text-amber-900 whitespace-nowrap">9,00 €</span>
           </div>
-          <p class="text-gray-600 italic">
+          <p class="text-gray-600 italic font-libre">
             pain de mie, chèvre frais, échalotes, jambon, pousses d'épinard, bûche de chèvre
           </p>
         </div>
@@ -82,7 +102,7 @@
             </div>
             <span class="text-xl font-bold text-amber-900 whitespace-nowrap">8,50 €</span>
           </div>
-          <p class="text-gray-600 italic">
+          <p class="text-gray-600 italic font-libre">
             pain de campagne, chèvre frais, oignon confit, pousses d'épinard, tomates séchées, cheddar
           </p>
         </div>
@@ -97,7 +117,7 @@
       </div>
 
       <!-- Note -->
-      <p class="mt-6 text-center text-gray-600 text-sm italic">
+      <p class="mt-6 text-center text-gray-600 text-sm italic font-libre">
         Tous nos croques sont servis avec salade et tomates cerises
       </p>
     </section>
@@ -120,18 +140,664 @@
           <h3 class="text-xl font-bold text-amber-900">Croque Séli</h3>
           <span class="text-xl font-bold text-amber-900 whitespace-nowrap">6,00 €</span>
         </div>
-        <p class="text-gray-600 italic">
+        <p class="text-gray-600 italic font-libre">
           brioche, crème d'amande, confiture de myrtille, amandes effilées
         </p>
       </div>
     </section>
 
-    <!-- Footer -->
-    <div class="mt-16 pt-8 border-t border-amber-200 text-center space-y-2 text-sm text-gray-600">
+    <!-- Footer informatif -->
+    <div class="mt-16 pt-8 border-t border-amber-200 text-center space-y-2 text-sm text-gray-600 font-libre">
       <p><i data-lucide="leaf" class="w-4 h-4 inline text-green-600"></i> Végétarien</p>
       <p>Liste des allergènes disponibles sur demande</p>
       <p class="font-semibold text-amber-900">Prix service compris</p>
     </div>
 
   </div>
+
+  <!-- Contenu : NOS BOISSONS -->
+  <div data-menu-tabs-target="content" data-content-id="boissons" class="container mx-auto px-5 py-20 max-w-3xl hidden">
+
+    <!-- ==================== APÉRITIFS ==================== -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-amber-900 mb-12 text-center uppercase tracking-wide">
+        Apéritifs
+      </h2>
+
+      <div class="space-y-8">
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Le Caradoc</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">2,50 €</span>
+          </div>
+          <p class="text-gray-600 italic font-libre">
+            apéritif maison, 8 cl
+          </p>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">La Dame du Lac</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">4,50 €</span>
+          </div>
+          <p class="text-gray-600 italic font-libre">
+            prosseco, amaretto, cerise amarena
+          </p>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Ricard / Pastis 2 cl</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">3,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Martini 5 cl</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">4,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Porto 6 cl</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">4,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Kir vin blanc</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">3,20 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Kir Pétillant</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">3,80 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Pétillant</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">3,50 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-6">
+          <div class="flex justify-between items-baseline gap-4 mb-2">
+            <h3 class="text-xl font-bold text-amber-900">Aperol Spritz</h3>
+            <span class="text-xl font-bold text-amber-900 whitespace-nowrap">7,00 €</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="mt-6 text-center text-gray-600 text-xs italic font-libre">
+        *Allergènes fruits à coques
+      </p>
+    </section>
+
+    <!-- Séparateur -->
+    <div class="flex items-center gap-4 my-16">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+      <div class="text-amber-500 text-2xl">⚜</div>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+    </div>
+
+    <!-- ==================== BIÈRES ==================== -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-amber-900 mb-12 text-center uppercase tracking-wide">
+        Bières
+      </h2>
+
+      <!-- PRESSIONS -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-amber-900 mb-6 uppercase">Pressions</h3>
+
+        <div class="space-y-6">
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">Penceval</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">25cl</span>
+              <span class="font-bold text-amber-900">3,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">33cl</span>
+              <span class="font-bold text-amber-900">4,50 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">50cl</span>
+              <span class="font-bold text-amber-900">6,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">Duchesse Anne Triple</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">25cl</span>
+              <span class="font-bold text-amber-900">4,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">33cl</span>
+              <span class="font-bold text-amber-900">5,30 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">50cl</span>
+              <span class="font-bold text-amber-900">8,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">Bière du moment</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">25cl</span>
+              <span class="font-bold text-amber-900">4,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">33cl</span>
+              <span class="font-bold text-amber-900">5,30 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">50cl</span>
+              <span class="font-bold text-amber-900">8,00 €</span>
+            </div>
+          </div>
+
+          <div class="pt-4 text-center">
+            <p class="text-gray-700 italic font-libre">
+              Supplément Picon <span class="font-bold text-amber-900 font-meta">1,50 €</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOUTEILLES -->
+      <div>
+        <h3 class="text-2xl font-bold text-amber-900 mb-6 uppercase">Bouteilles</h3>
+
+        <div class="space-y-6">
+          <div class="border-b border-amber-200 pb-4">
+            <div class="flex justify-between items-baseline gap-4">
+              <h4 class="text-lg font-bold text-amber-900">Kasteel Rouge 33cl</h4>
+              <span class="text-lg font-bold text-amber-900 whitespace-nowrap">5,50 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <div class="flex justify-between items-baseline gap-4">
+              <h4 class="text-lg font-bold text-amber-900">Morgane Nuit Rousse 33cl</h4>
+              <span class="text-lg font-bold text-amber-900 whitespace-nowrap">5,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <div class="flex justify-between items-baseline gap-4">
+              <h4 class="text-lg font-bold text-amber-900">Blanche Hermine 33cl</h4>
+              <span class="text-lg font-bold text-amber-900 whitespace-nowrap">5,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <div class="flex justify-between items-baseline gap-4">
+              <h4 class="text-lg font-bold text-amber-900">Telenn Du Brune 33cl</h4>
+              <span class="text-lg font-bold text-amber-900 whitespace-nowrap">5,50 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <div class="flex justify-between items-baseline gap-4">
+              <h4 class="text-lg font-bold text-amber-900">Cadette IPA</h4>
+              <span class="text-lg font-bold text-amber-900 whitespace-nowrap">5,50 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <div class="flex justify-between items-baseline gap-4">
+              <h4 class="text-lg font-bold text-amber-900">Desperados</h4>
+              <span class="text-lg font-bold text-amber-900 whitespace-nowrap">5,50 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <div class="flex justify-between items-baseline gap-4">
+              <h4 class="text-lg font-bold text-amber-900">Dremwell sans alcool</h4>
+              <span class="text-lg font-bold text-amber-900 whitespace-nowrap">4,00 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Séparateur -->
+    <div class="flex items-center gap-4 my-16">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+      <div class="text-amber-500 text-2xl">⚜</div>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+    </div>
+
+    <!-- ==================== VINS ==================== -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-amber-900 mb-12 text-center uppercase tracking-wide">
+        Vins
+      </h2>
+
+      <!-- BLANCS -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-amber-900 mb-6 uppercase">Blancs</h3>
+
+        <div class="space-y-6">
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">IGP Côtes de Gascogne « Moustache pour tous »</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">15cl</span>
+              <span class="font-bold text-amber-900">3,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">1/4 de vin</span>
+              <span class="font-bold text-amber-900">5,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">1/2 bouteille</span>
+              <span class="font-bold text-amber-900">10,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">15,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">AOP Muscadet/lie « clos les Lozangères »</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">15,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">IGP d'Oc Vigne Antique Sauvignon</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">15,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">IGP d'Oc Vigne Antique Chardonnay</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">15,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">VDF chardonnay Les Bouquet « Domaine L'Aiguillette »</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">18,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">VDF Chenin Privilège</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">18,00 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROSÉS -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-amber-900 mb-6 uppercase">Rosés</h3>
+
+        <div class="space-y-6">
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">IGP Côtes de Gascogne « Moustache pour tous »</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">15cl</span>
+              <span class="font-bold text-amber-900">3,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">1/2 bouteille</span>
+              <span class="font-bold text-amber-900">10,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">15,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">IGP Ile de Beauté PFN DULICK</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">18,00 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROUGES -->
+      <div>
+        <h3 class="text-2xl font-bold text-amber-900 mb-6 uppercase">Rouges</h3>
+
+        <div class="space-y-6">
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">IGP Côtes de Gascogne « Moustache pour tous »</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">15cl</span>
+              <span class="font-bold text-amber-900">3,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">1/4 de vin</span>
+              <span class="font-bold text-amber-900">5,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">1/2 bouteille</span>
+              <span class="font-bold text-amber-900">10,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">15,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">AOP Bordeaux « Haute Sauvetat »</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">75cl</span>
+              <span class="font-bold text-amber-900">18,00 €</span>
+            </div>
+          </div>
+
+          <div class="border-b border-amber-200 pb-4">
+            <h4 class="text-lg font-bold text-amber-900 mb-3">IGP d'Oc Vigne Antique Sauvignon</h4>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">15cl</span>
+              <span class="font-bold text-amber-900">3,50 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">1/4 de vin</span>
+              <span class="font-bold text-amber-900">6,00 €</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span class="font-libre italic">1/2 bouteille</span>
+              <span class="font-bold text-amber-900">12,00 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Séparateur -->
+    <div class="flex items-center gap-4 my-16">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+      <div class="text-amber-500 text-2xl">⚜</div>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+    </div>
+
+    <!-- ==================== SOFTS ==================== -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-amber-900 mb-12 text-center uppercase tracking-wide">
+        Softs
+      </h2>
+
+      <div class="space-y-6">
+
+        <div class="border-b border-amber-200 pb-4">
+          <h4 class="text-lg font-bold text-amber-900 mb-3">Eau minérale Plancoët</h4>
+          <div class="flex justify-between text-gray-700">
+            <span>33cl</span>
+            <span class="font-bold text-amber-900">3,00 €</span>
+          </div>
+          <div class="flex justify-between text-gray-700">
+            <span>50cl</span>
+            <span class="font-bold text-amber-900">3,50 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <h4 class="text-lg font-bold text-amber-900 mb-3">Eau gazeuse Plancoët</h4>
+          <div class="flex justify-between text-gray-700">
+            <span class="font-libre italic">50cl</span>
+            <span class="font-bold text-amber-900">3,50 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Perrier</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">3,20 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Breizh cola, Breizh agrum, Breizh thé pêche</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">3,20 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Breizh tonic</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">3,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Limonade</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">2,30 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Diabolo</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">2,50 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Orangina</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">3,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Jus de fruits : abricot, fraise, orange, pomme, ananas, tomate</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">3,00 €</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Séparateur -->
+    <div class="flex items-center gap-4 my-16">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+      <div class="text-amber-500 text-2xl">⚜</div>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+    </div>
+
+    <!-- ==================== BOISSONS CHAUDES ==================== -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-amber-900 mb-12 text-center uppercase tracking-wide">
+        Boissons Chaudes
+      </h2>
+
+      <div class="space-y-6">
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Café</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">1,80 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Café crème</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">2,30 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Noisette</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">1,90 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Chocolat</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">2,50 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Thé ceylan</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">2,80 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <div>
+              <h4 class="text-lg font-bold text-amber-900">Thé aromatisé :</h4>
+              <p class="text-gray-600 text-sm italic mt-1 font-libre">
+                Augustel : thé noir à la fraise, hydromel et morceaux de fraise
+              </p>
+              <p class="text-gray-600 text-sm italic font-libre">
+                Grok : thé vert sencha à la pomme, amandes, crème et pépites chocolat
+              </p>
+              <p class="text-gray-600 text-sm italic font-libre">
+                Thé vert à la menthe
+              </p>
+              <p class="text-gray-600 text-sm italic font-libre">
+                Thé noir darjeeling bio
+              </p>
+            </div>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">2,80 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Verveine bio</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">2,80 €</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Séparateur -->
+    <div class="flex items-center gap-4 my-16">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+      <div class="text-amber-500 text-2xl">⚜</div>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+    </div>
+
+    <!-- ==================== DIGESTIFS ==================== -->
+    <section>
+      <h2 class="text-3xl font-bold text-amber-900 mb-12 text-center uppercase tracking-wide">
+        Digestifs
+      </h2>
+
+      <div class="space-y-6">
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Calvados 4 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">6,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Cognac 4 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">6,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Cognac aux Amandes 4 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">6,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Whisky 4 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">6,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Whisky Supérieur 4 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">7,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Baby 2cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">3,50 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Alcool soda</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">7,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Ti Punch 4 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">7,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Get 27//GET 31 4 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">6,00 €</span>
+          </div>
+        </div>
+
+        <div class="border-b border-amber-200 pb-4">
+          <div class="flex justify-between items-baseline gap-4">
+            <h4 class="text-lg font-bold text-amber-900">Œil de Chouette (spécialité) 3 cl</h4>
+            <span class="text-lg font-bold text-amber-900 whitespace-nowrap">3,00 €</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer informatif -->
+    <div class="mt-16 pt-8 border-t border-amber-200 text-center space-y-2 text-sm text-gray-600 font-libre">
+      <p class="italic">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      <p class="font-semibold text-amber-900 font-meta  ">Prix service compris</p>
+    </div>
+
+  </div>
+
 </div>
