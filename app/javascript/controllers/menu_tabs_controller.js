@@ -20,12 +20,12 @@ export default class extends Controller {
     this.tabTargets.forEach(tab => {
       if (tab.dataset.tabId === tabId) {
         // Bouton actif : fond marron
-        tab.classList.remove("bg-white", "text-amber-900")
+        tab.classList.remove("bg-white", "bg-transparent", "text-amber-900")
         tab.classList.add("bg-amber-900", "text-white")
       } else {
-        // Bouton inactif : fond blanc
-        tab.classList.remove("bg-amber-900", "text-white")
-        tab.classList.add("bg-white", "text-amber-900")
+        // Bouton inactif : fond transparent (laisse voir le beige du parent)
+        tab.classList.remove("bg-amber-900", "bg-white", "text-white")
+        tab.classList.add("bg-transparent", "text-amber-900")
       }
     })
 
