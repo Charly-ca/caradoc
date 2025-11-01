@@ -9,11 +9,25 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Metamorphous&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="font-meta bg-amber-50 <%= 'homepage' if controller_name == 'pages' && action_name == 'home' %>">
+    <%= render "shared/navbar" %>
+    <main style="<%= 'padding-top: 120px;' unless action_name == 'home' %>">
+
       <%= yield %>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <%= render "shared/footer" %>
   </body>
 </html>

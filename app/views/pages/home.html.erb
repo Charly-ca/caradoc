@@ -1,0 +1,261 @@
+<section class="relative h-screen overflow-hidden">
+  <!-- Image de fond -->
+  <%= image_tag "plats.webp", class: "absolute inset-0 w-full h-full object-cover", alt: "Croque-monsieur" %>
+
+  <!-- Fond sombre, appeler overlay -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Contenu du hero -->
+  <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-5">
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-10">
+      LE CARADOC
+    </h1>
+
+    <p class="text-xl md:text-2xl text-white mb-20 max-w-2xl font-libre">
+     Les Meilleurs Croque-Monsieur, Bistro-bar convivial où tradition et qualité se rencontrent
+    </p>
+
+    <div class="flex gap-4">
+      <%= link_to "Voir Le Menu", menu_path, class: "bg-white/20 backdrop-blur-sm border-3 border-white hover:bg-white hover:text-amber-900 text-white font-bold px-8 py-4 rounded-lg transition-all text-lg" %>
+    </div>
+  </div>
+</section>
+
+
+<div class="relative -mt-16 z-100 flex justify-center">
+  <%= image_tag "logo-caradoc.png", alt: "Le Caradoc", class: "w-32 h-32 bg-amber-50 rounded-full p-1 shadow-lg" %>
+</div>
+
+<section class='relative py-20'>
+
+
+  <!-- Séparateur décoratif entre sections -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='container mx-auto px-5'>
+    <div class='flex flex-col md:flex-row gap-12 items-center'>
+
+      <div class='flex-1'>
+        <div class="splide" data-controller="carousel" data-carousel-type="slide">
+          <div class="splide__track rounded-xl overflow-hidden">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <%= image_tag "croque3.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "oeuf.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "croque4.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "plats.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "dessert.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class='flex-1'>
+        <h2 class='text-3xl font-bold mb-6 text-amber-900'>Bienvenue au Caradoc</h2>
+        <p class='text-lg mb-4 text-gray-700 font-libre'>Découvrez notre sélection de croque-monsieur gourmets, préparés avec des ingrédients frais et de qualité. Que vous soyez amateur de classiques ou à la recherche de saveurs innovantes, notre menu varié saura satisfaire toutes vos envies.</p>
+        <div class='flex justify-center'>
+        <%= link_to menu_path, class: "inline-flex items-center gap-2 px-6 py-3 bg-amber-900 hover:bg-caradoc-red text-white font-bold rounded-lg transition-colors group" do %>
+          Voir Le Menu
+          <i data-lucide="arrow-right" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"></i>
+        <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Séparateur décoratif entre sections -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class='relative bg-white py-20'>
+
+
+
+  <div class='container mx-auto px-5'>
+    <div class='flex flex-col md:flex-row-reverse gap-12 items-center'>
+      <div class='flex-1'>
+        <div class="splide" data-controller="carousel" data-carousel-type="fade">
+          <!-- structure du carrousel histoire -->
+
+          <div class="splide__track rounded-xl overflow-hidden">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <%= image_tag "bea-fab-bar.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "client-bar.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+              <li class="splide__slide">
+                <%= image_tag "cuisinier.webp", class: "w-full h-96 object-cover rounded-lg" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class='flex-1'>
+        <!-- ton texte sur l'histoire -->
+        <h2 class='text-3xl font-bold mb-6 text-amber-900'>L'Histoire du Caradoc</h2>
+        <p class='text-lg mb-4 text-gray-700 font-libre'>
+          Installé au cœur des Halles de Saint-Nazaire, Le Caradoc est né de la passion de Fabien et Béatrice pour la convivialité et la bonne cuisine. Fans de Kaamelott, ils ont imaginé un bistro-bar à l'esprit chaleureux où les croques-monsieur sont rois et l'humour toujours bienvenu.
+        </p>
+     </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class='py-20'>
+
+  <!-- Séparateur décoratif -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='container mx-auto px-5'>
+
+    <!-- Texte -->
+    <div class='text-center mb-12'>
+      <h2 class='text-4xl font-bold mb-6 text-amber-900'>Découvrez Notre Univers</h2>
+      <p class='text-lg text-gray-700 font-libre max-w-3xl mx-auto'>
+        Situé en face des Halles de Saint-Nazaire, Le Caradoc vous accueille dans une ambiance chaleureuse où tradition et convivialité se rencontrent. Un lieu de vie où l'on se sent comme à la maison.
+      </p>
+    </div>
+
+    <!-- ⚠️ CRITIQUE : data-controller ici, avant la grille -->
+    <div data-controller="gallery">
+
+      <!-- Grille de photos -->
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-4'>
+
+        <% gallery_images = [
+          { src: "caradoc-exterieur-centrer.webp", alt: "Extérieur du Caradoc" },
+          { src: "biere.webp", alt: "Notre sélection de bières" },
+          { src: "champagne.webp", alt: "Champagne et bulles" },
+          { src: "tableau-femme.webp", alt: "Décoration intérieure" },
+          { src: "interieur-tableau.webp", alt: "Ambiance du bar" },
+          { src: "client-bar.webp", alt: "Nos clients au bar" },
+          { src: "croque-inte.webp", alt: "Nos croques signatures" },
+          { src: "bea-dos.webp", alt: "Service au comptoir" },
+          { src: "caradoc-menu.webp", alt: "Notre carte" }
+        ] %>
+
+        <% gallery_images.each_with_index do |img, index| %>
+          <div class='relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer group hover:shadow-xl transition-shadow'
+               data-action="click->gallery#open"
+               data-gallery-index-param="<%= index %>">
+
+            <%= image_tag img[:src],
+                          alt: img[:alt],
+                          class: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" %>
+
+            <!-- Overlay au hover -->
+            <div class='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center'>
+              <i data-lucide="expand" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+
+     <!-- Modal pour le carrousel -->
+<div data-gallery-target="modal"
+     class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
+     data-action="click->gallery#closeOnBackdrop">
+
+  <div class="relative w-full h-full flex items-center justify-center">
+
+    <!-- Bouton fermer -->
+    <button data-action="click->gallery#close"
+            class="absolute top-4 right-4 text-white hover:text-amber-300 transition-colors z-10">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+
+    <!-- Compteur -->
+    <div class="absolute top-4 left-4 text-white text-lg font-semibold z-10">
+      <span data-gallery-target="counter"></span>
+    </div>
+
+    <!-- Container pour centrer l'image avec max-width -->
+    <div class="relative flex items-center justify-center w-full h-full max-w-7xl mx-auto px-20">
+
+      <!-- Flèche GAUCHE - en dehors de l'image -->
+      <button data-action="click->gallery#previous"
+              class="absolute left-4 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-4 rounded-full transition-all z-10 flex-shrink-0">
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Image principale - s'adapte à sa taille naturelle -->
+      <div class="flex items-center justify-center max-w-full max-h-full">
+        <img data-gallery-target="image"
+             src=""
+             alt=""
+             class="max-w-full max-h-[85vh] w-auto h-auto object-contain rounded-lg shadow-2xl">
+      </div>
+
+      <!-- Flèche DROITE - en dehors de l'image -->
+      <button data-action="click->gallery#next"
+              class="absolute right-4 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-4 rounded-full transition-all z-10 flex-shrink-0">
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</div> <!-- Fin data-controller="gallery" -->
+
+  </div>
+
+  <!-- Séparateur décoratif -->
+  <div class="py-8">
+    <div class="container mx-auto px-5">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-amber-300 to-amber-300"></div>
+        <div class="text-amber-500 text-2xl">⚜</div>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent via-amber-300 to-amber-300"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
