@@ -15,6 +15,7 @@
      Les Meilleurs Croque-Monsieur, Bistro-bar convivial où tradition et qualité se rencontrent
     </p>
 
+
     <div class="flex gap-4">
       <%= link_to "Voir Le Menu", menu_path, class: "bg-white/20 backdrop-blur-sm border-3 border-white hover:bg-white hover:text-amber-900 text-white font-bold px-8 py-4 rounded-lg transition-all text-lg" %>
     </div>
@@ -70,6 +71,18 @@
       <div class='flex-1'>
         <h2 class='text-3xl font-bold mb-6 text-amber-900'>Bienvenue au Caradoc</h2>
         <p class='text-lg mb-4 text-gray-700 font-libre'>Découvrez notre sélection de croque-monsieur gourmets, préparés avec des ingrédients frais et de qualité. Que vous soyez amateur de classiques ou à la recherche de saveurs innovantes, notre menu varié saura satisfaire toutes vos envies.</p>
+
+
+     <!-- Horaires de service des croques -->
+    <div class="mb-12 p-6 bg-amber-100 border-2 border-amber-300 rounded-lg">
+      <p class="text-sm text-gray-700 mt-2 font-libre italic">
+        *Les croques sont servis les mardi, mercredi, vendredi et samedi de 10h à 17h
+      </p>
+      <p class="text-sm text-gray-700 mt-2 font-libre italic">
+        Pas de service de croques le dimanche
+      </p>
+    </div>
+
         <div class='flex justify-center'>
         <%= link_to menu_path, class: "inline-flex items-center gap-2 px-6 py-3 bg-amber-900 hover:bg-caradoc-red text-white font-bold rounded-lg transition-colors group" do %>
           Voir Le Menu
