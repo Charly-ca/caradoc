@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
    root 'pages#home'
    get 'menu', to: 'pages#menu'
-
+   get 'mentions-legales', to: 'pages#mentions_legales', as: 'mentions_legales'
 end

@@ -49,6 +49,13 @@
             <span>09 82 64 11 67</span>
           </a>
 
+          <a href="mailto:sarllecaradoc@bbox.fr" class="flex items-center gap-2 hover:text-amber-300 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>sarllecaradoc@bbox.fr</span>
+          </a>
+
           <a href="https://www.google.com/maps/place/Bar+Le+Caradoc/@47.280578,-2.297907,12z/data=!4m6!3m5!1s0x480565bd1c26ffad:0xd002392aec809b23!8m2!3d47.2806075!4d-2.2155065!16s%2Fg%2F11wb389y6l?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="flex items-center gap-2 hover:text-amber-300 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -77,6 +84,9 @@
     <!-- Copyright -->
     <div class="border-t border-amber-700 mt-8 pt-8 text-center text-sm">
       <p>&copy; <%= Time.current.year %> Le Caradoc. Tous droits réservés.</p>
+      <p class="mt-2">
+        <%= link_to "Mentions Légales", mentions_legales_path, class: "hover:text-amber-300 transition-colors underline" %>
+      </p>
     </div>
   </div>
 </footer>

@@ -2,5 +2,7 @@ class PagesController < ApplicationController
   def home
   end
   def menu
-  end 
+  end
+  def mentions_legales
+  end
 end
